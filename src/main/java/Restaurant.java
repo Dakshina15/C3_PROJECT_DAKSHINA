@@ -22,11 +22,11 @@ public class Restaurant {
     public boolean isRestaurantOpen() {
         int closeTime = getCurrentTime().compareTo(this.closingTime);
         int openTime = getCurrentTime().compareTo(this.openingTime);
-        return( closeTime < 0) && (openTime > 0 )? true : false;
+        return (closeTime < 0) && (openTime > 0) ? true : false;
     }
 
-    public LocalTime getCurrentTime(){
-        return  LocalTime.now();
+    public LocalTime getCurrentTime() {
+        return LocalTime.now();
     }
 
     public List<Item> getMenu() {
@@ -34,16 +34,17 @@ public class Restaurant {
 
         //DELETE ABOVE RETURN STATEMENT AND WRITE CODE HERE
     }
-    private Item findItemByName(String itemName){
-        for(Item item: menu) {
-            if(item.getName().equals(itemName))
+
+    private Item findItemByName(String itemName) {
+        for (Item item : menu) {
+            if (item.getName().equals(itemName))
                 return item;
         }
         return null;
     }
 
     public void addToMenu(String name, int price) {
-        Item newItem = new Item(name,price);
+        Item newItem = new Item(name, price);
         menu.add(newItem);
 
     }
@@ -61,12 +62,13 @@ public class Restaurant {
 
         menu.remove(itemToBeRemoved);
     }
-    public void displayDetails(){
-        System.out.println("Restaurant:"+ name + "\n"
-                +"Location:"+ location + "\n"
-                +"Opening time:"+ openingTime +"\n"
-                +"Closing time:"+ closingTime +"\n"
-                +"Menu:"+"\n"+getMenu());
+
+    public void displayDetails() {
+        System.out.println("Restaurant:" + name + "\n"
+                + "Location:" + location + "\n"
+                + "Opening time:" + openingTime + "\n"
+                + "Closing time:" + closingTime + "\n"
+                + "Menu:" + "\n" + getMenu());
     }
 
     public String getName() {
@@ -74,13 +76,8 @@ public class Restaurant {
     }
 
 
-    public int getTotalOrderPrice(List<Item> listOfItems){
-        int totalSum = 0;
-        for(Item i : listOfItems) {
-            totalSum = totalSum + i.getPrice();
-        }
-        System.out.println("Total order Price" + totalSum);
-        return totalSum;
-    }
+    public int getTotalOrderPrice(List<Item> listOfItems) {
+        return 0;
 
+    }
 }
